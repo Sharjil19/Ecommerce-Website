@@ -42,13 +42,15 @@ The E-Commerce Website is a web-based platform designed to allow customers to br
 
 | Layer | Technology |
 |---|---|
-| Frontend | HTML, CSS, JavaScript |
-| Backend | Python, FastAPI |
-| Database | MySQL |
-| API Testing | Postman |
-| Code Editor | Visual Studio Code |
-| Version Control | Git |
-| Repository Hosting | GitHub |
+| Frontend | Next.js, HTML, CSS, JavaScript |
+| Backend | Python, FastAPI, SQLAlchemy(ORM) |
+| Database | PostgreSQL |
+| Authentication & Security | JWT Authentication, Role-Based Access Control (RBAC)|
+| Payment Integration | Razorpay |
+| Development & Version Control | Git, Visual Studio Code, Postman  |
+
+
+
 
 ## 5. Core Features
 

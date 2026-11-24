@@ -1,4 +1,6 @@
-
+from pydantic import EmailStr
+from typing import Literal
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Optional
 
@@ -21,5 +23,24 @@ class ProductUpdate(BaseModel):
 
 class ProductResponse(ProductCreate):
     id: int
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class UserRegister(BaseModel):
+    full_name: str
+    email: EmailStr
+    password: str = Field(min_length=8)
+    role: Literal["customer", "vendor"] = "customer"
+
+
+class UserResponse(BaseModel):
+    id: int
+    full_name: str
+    email: EmailStr
+    role: str
+    is_active: bool
+    vendor_status: Optional[str] = None
+    created_at: datetime
 
     model_config = ConfigDict(from_attributes=True)

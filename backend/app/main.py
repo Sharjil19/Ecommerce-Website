@@ -1,6 +1,7 @@
 
 from fastapi import FastAPI
 from app.routes import products
+from app.routes import auth
 from app.database import Base, engine
 from app import models
 
@@ -15,6 +16,7 @@ app = FastAPI(
 
 #Register product routes
 app.include_router(products.router)
+app.include_router(auth.router)
 
 # Root endpoint
 @app.get("/")

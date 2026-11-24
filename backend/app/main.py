@@ -1,5 +1,6 @@
 
 from fastapi import FastAPI
+from app.routes import products
 
 # Initialize FastAPI application
 app = FastAPI(
@@ -7,6 +8,9 @@ app = FastAPI(
     description="Backend API for the E-Commerce Website",
     version="1.0.0"
 )
+
+#Register product routes
+app.include_router(products.router)
 
 # Root endpoint
 @app.get("/")
